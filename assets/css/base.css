@@ -24,5 +24,20 @@
 }
 
 :where(body)::after {
-  content: ' rocks!';
+  content: 'applied';
+}
+
+
+div.error {
+  display: none;
+}
+
+.no-where div.error {
+  position: fixed;
+  display: block;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background: red;
+  color: white;
 }

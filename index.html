@@ -27,6 +27,8 @@
 </head>
 <body>
 
+  <div class="error">No Where !</div>
+
   <a class="skiplink" href="#main">Top</a>
   <a class="skiplink" href="#main">Navigation</a>
   <a class="skiplink" href="#main">skip to main content</a>
@@ -77,7 +79,7 @@
 
   <!-- ============================================= -->
 
-  <script src="assets/js/modernizr-3.12.0.dev.js"></script>
+  <!-- <script src="assets/js/modernizr-3.12.0.min.js"></script> -->
   <script src="assets/js/css-vars-ponyfill.min.js"></script>
   <script src="assets/js/main.js"></script>
 
@@ -85,9 +87,16 @@
   var h3 = document.querySelector('body');
   var result = getComputedStyle(h3, ':after').content;
 
-  console.log('the generated content is: ', result); // returns ' rocks!'
+  if(!result) {
+    addClassNoWhere();
+  }
 
-  alert(result);
+  
+
+  function addClassNoWhere() {
+  var html = document.documentElement;
+  html.classList.add('no-where');
+}
 
   </script>
 	

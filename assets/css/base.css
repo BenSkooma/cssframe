@@ -18,9 +18,9 @@
     display: revert;
   }
 }
-@supports not selector(where) {
+/* @supports not selector(where) {
   *:not(html):not(iframe):not(canvas):not(img):not(svg):not(video) {
     all: unset;
     display: revert;
   }
-}
+} */

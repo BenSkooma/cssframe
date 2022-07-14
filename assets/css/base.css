@@ -17,3 +17,12 @@
 :where(body) {
   background-color: rgb(212, 231, 6);
 }
+
+:where(.test) {
+  width: auto;
+  background: red;
+}
+
+:where(body)::after {
+  content: ' rocks!';
+}

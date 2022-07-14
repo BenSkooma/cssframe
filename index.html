@@ -13,8 +13,10 @@
   <meta name="description" content="Lorem ipsum dolor sit amet!">
 
   <title>Pagetitle</title>
+
+  <link rel="stylesheet" href="assets/css/base.css">
   
-  <link rel="stylesheet" href="assets/css/base.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="assets/css/base.css"></noscript>
+  <!-- <link rel="stylesheet" href="assets/css/base.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="assets/css/base.css"></noscript> -->
   <!-- <link rel="stylesheet" href="assets/css/legacy.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="assets/css/legacy.css"></noscript> -->
   <!-- <link rel="stylesheet" href="assets/css/typo.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="assets/css/typo.css"></noscript> -->
   <!-- <link rel="stylesheet" href="assets/css/print.css" media="none" onload="if(media!='print')media='print'"><noscript><link rel="stylesheet" href="assets/css/print.css"></noscript> -->
@@ -65,6 +67,10 @@
         <li>Item 4</li>
       </ul>
 
+      <div class="test">
+        Hello world
+      </div>
+
     </main>
 
   </div> <!-- END .page-wrapper -->
@@ -74,6 +80,16 @@
   <script src="assets/js/modernizr-3.12.0.dev.js"></script>
   <script src="assets/js/css-vars-ponyfill.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+  var h3 = document.querySelector('body');
+  var result = getComputedStyle(h3, ':after').content;
+
+  console.log('the generated content is: ', result); // returns ' rocks!'
+
+  alert(result);
+
+  </script>
 	
 </body>
 </html>

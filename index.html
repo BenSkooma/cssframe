@@ -1,8 +1,8 @@
 <!doctype html>
 <!--[if IE]>
-<html class="no-js oldie" dir="ltr" lang="de">
+<html class="no-js oldie where" dir="ltr" lang="de">
 <![endif]--><!--[if !IE]><!-->
-<html class="no-js" dir="ltr" lang="de">
+<html class="no-js where" dir="ltr" lang="de">
 <!--<![endif]-->
 
 <head>
@@ -95,7 +95,7 @@
 
   function addClassNoWhere() {
   var html = document.documentElement;
-  html.classList.add('no-where');
+  html.className.replace("where","no-where");
 }
 
   </script>

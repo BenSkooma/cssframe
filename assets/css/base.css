@@ -1,3 +1,7 @@
+
+/* Feature Detection for :where() */
+:where(html):before {display: none; content: 'applied';}
+
 /*----------------------------------------------*/
 /* Config
 /*----------------------------------------------*/
@@ -14,16 +18,13 @@
   background: rgb(177, 13, 166);
 } */
 
+.no-where body {
+  background-color: brown;
+}
+
 :where(body) {
   background-color: rgb(212, 231, 6);
 }
-
-:where(.test) {
-  width: auto;
-  background: red;
-}
-
-:where(html):before {content: 'applied';}
 
 
 div.error {

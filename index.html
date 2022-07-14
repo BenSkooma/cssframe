@@ -2,7 +2,7 @@
 <!--[if IE]>
 <html class="no-js oldie where" dir="ltr" lang="de">
 <![endif]--><!--[if !IE]><!-->
-<html class="no-js where" dir="ltr" lang="de">
+<html class="no-js" dir="ltr" lang="de">
 <!--<![endif]-->
 
 <head>
@@ -88,7 +88,7 @@
   var result = getComputedStyle(h3, ':after').content;
 
   if(!result) {
-    document.documentElement.className=document.documentElement.className.replace("where","no-where");
+    document.documentElement.classList.add('no-where');
   }
 
   </script>

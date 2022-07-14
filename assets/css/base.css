@@ -31,8 +31,8 @@ body {
     display: revert;
   } */
 
-  body {
-    background-color: green !important;
+  :where(body) {
+    background-color: rgb(26, 63, 26) !important;
   }
 }
 

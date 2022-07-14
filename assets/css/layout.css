@@ -1,0 +1,50 @@
+@import url('modules/helpers.css');
+/* @import url('modules/debug.css'); */
+
+/* General
+/*---------------------------------------------------*/
+
+html, body {height: 100%;}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--p-color);
+}
+
+/* Hyperlinks
+/*---------------------------------------------------*/
+
+
+
+/*----------------------------------*/
+
+[href^="http"]::before {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap; 
+  height: 1px;
+  width: 1px;
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  content: '(external link)';
+}
+[href^="http"]::after {
+  font-family: 'FontAwesome';
+  font-size: 80%;
+  vertical-align: baseline;
+  content: '\00a0\00a0\f08e';
+}
+
+/* Accessibility
+/*---------------------------------------------------*/
+
+.skiplink {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  z-index: 100;
+  background: black;
+  color: white;
+  padding: .5em 1em;
+}
+.skiplink:focus {right: auto;}

@@ -1,0 +1,26 @@
+/*----------------------------------------------*/
+/* Config
+/*----------------------------------------------*/
+
+:root {
+  --debug: 1px solid red;
+}
+
+/*----------------------------------------------*/
+/* Reset
+/*----------------------------------------------*/
+
+
+
+@supports selector(where) {
+  *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+  }
+}
+@supports not selector(where) {
+  *:not(html):not(iframe):not(canvas):not(img):not(svg):not(video) {
+    all: unset;
+    display: revert;
+  }
+}

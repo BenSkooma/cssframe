@@ -88,15 +88,8 @@
   var result = getComputedStyle(h3, ':after').content;
 
   if(!result) {
-    addClassNoWhere();
+    document.documentElement.className=document.documentElement.className.replace("where","no-where");
   }
-
-  
-
-  function addClassNoWhere() {
-  var html = document.documentElement;
-  html.className.replace("where","no-where");
-}
 
   </script>
 	

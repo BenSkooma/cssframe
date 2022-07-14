@@ -93,7 +93,7 @@
   var result = getComputedStyle(h3, ':after').content;
 
   if(!result) {
-    var html = document.documentElement;
+    var html = document.querySelector('html');
     addClass(html, 'no-where')
   }
 

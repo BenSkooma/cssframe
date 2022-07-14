@@ -14,6 +14,16 @@ body {
   background: gray;
 }
 
+@supports not selector(where) {
+  /* *:not(html):not(iframe):not(canvas):not(img):not(svg):not(video) {
+    all: unset;
+    display: revert;
+  } */
+
+  body {
+    background: red !important;
+  }
+}
 
 @supports selector(where) {
   /* *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
@@ -22,17 +32,7 @@ body {
   } */
 
   body {
-    background-color: green;
+    background-color: green !important;
   }
 }
 
-@supports not selector(where) {
-  /* *:not(html):not(iframe):not(canvas):not(img):not(svg):not(video) {
-    all: unset;
-    display: revert;
-  } */
-
-  body {
-    background: red;
-  }
-}

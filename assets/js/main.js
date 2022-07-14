@@ -2,7 +2,7 @@
 /* ---------------------------------- */
 !function(a,b){"use strict";b.documentElement.className=b.documentElement.className.replace("no-js","js"),("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)&&(document.documentElement.className=document.documentElement.className.replace("no-touch","touch"))}(window,document);
 
-!function(result, html){"use strict";if(!result || result === 'none') addClass(html, 'no-where')} (window.getComputedStyle(document.documentElement,':before').content, document.documentElement);
+!function(result,html){"use strict";if(!result||result==='none')addClass(html,'no-where')}(window.getComputedStyle(document.documentElement,':before').content,document.documentElement);
 
 /* CSS-Vars-Ponyfill Config
 /* ---------------------------------- */

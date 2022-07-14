@@ -23,9 +23,7 @@
   background: red;
 }
 
-:where(body):after {
-  content: 'applied';
-}
+:where(html):before {content: 'applied';}
 
 
 div.error {

@@ -23,7 +23,7 @@
   background: red;
 }
 
-:where(body)::after {
+:where(body):after {
   content: 'applied';
 }
 

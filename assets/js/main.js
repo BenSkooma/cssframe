@@ -5,7 +5,7 @@
 /* :where() */
 !function(result,html){"use strict";if(!result||result==='none')addClass(html,'no-where')}(window.getComputedStyle(document.documentElement,':before').content,document.documentElement);
 
-testValue('all', 'unset');
+
 // testProperty('all');
 
 // testValue('unset', 'unset', 'all');
@@ -40,32 +40,36 @@ else if (!hasClass(el, className)) el.className += " " + className
 }
 
 
-
+testValue('display', 'unset');
 
 
 function testValue(property, value) {
 
-  var html = document.documentElement;
+  var root = document.documentElement;
 
-  var dummy = document.createElement('p');
+  console.log(root.style);
 
-  if (property in html.style) {
+  if (property in root.style) {
 
     console.log(property +' is supported');
 
-    dummy.style[property] = value;
+    // Property is Supported
 
+    var dummy = document.createElement('p');
+
+    dummy.style[property] = value;
+    
     if (dummy.style[property]) {
 
-      addClass(html, value.toLowerCase());
+      console.log(value +' is supported'); console.log(dummy);
 
-      console.log(value + ' is supported');
+      // Value is Supported
 
     } else {
 
       console.log(value +' is not supported');
 
-      addClass(html, 'no-' + value.toLowerCase());
+      // Value is NOT Supported
 
     }
 
@@ -73,26 +77,9 @@ function testValue(property, value) {
 
     console.log(property +' is not supported');
 
-    addClass(html, 'no-' + property.toLowerCase());
+    // Property is NOT Supported
 
   }
-
-  
-
-  // if (property in html.style) {
-
-  //   if (dummy.style[property]) { addClass(html, value); }
-
-  //   addClass(html, 'no-' + value);
-
-  //   return false;
-
-  // }
-
-  // addClass(html, 'no-' + property.toLowerCase());
-
-  // return false;
-
 
 }
 

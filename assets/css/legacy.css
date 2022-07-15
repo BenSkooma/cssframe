@@ -46,3 +46,7 @@ html.no-where.no-all.no-unset:after {
   background: transparent;
   cursor: inherit;
 }
+
+.js div {
+  background: red;
+}

@@ -3,7 +3,7 @@
 /* js + touch */
 !function(d){"use strict";d.documentElement.className=d.documentElement.className.replace("no-js","js"),("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)&&(document.documentElement.className=document.documentElement.className.replace("no-touch","touch"))}(document);
 /* :where() */
-!function(result,html){"use strict";if(!result||result==='none')addClass(html,'no-where')}(window.getComputedStyle(document.documentElement,':before').content,document.documentElement);
+// !function(result,html){"use strict";if(!result||result==='none')addClass(html,'no-where')}(window.getComputedStyle(document.documentElement,':before').content,document.documentElement);
 
 
 // testProperty('all');
@@ -40,14 +40,88 @@ else if (!hasClass(el, className)) el.className += " " + className
 }
 
 
-testValue('display', 'unset');
+
+
+
+
+// !function(result,html){
+//   "use strict";
+  
+//   if(!result||result==='none') {
+    
+//     addClass(html,'no-where')}
+  
+  
+  
+//   }(window.getComputedStyle(document.documentElement,':before').content,document.documentElement);
+
+
+// testWhere(document.documentElement);
+
+
+
+!function(d) {
+
+  var has_where = testWhere(d.documentElement);
+
+  if (has_where === false) {
+
+    loadCssFile('base.no-where');
+
+  }
+
+  testValue('all', 'unset');
+  testValue('display', 'unset');
+  testValue('display', 'revert');
+  testValue('all', 'revert');
+
+}(document);
+
+
+
+function testWhere(element) {
+
+  if (window.getComputedStyle(element, ':before').content === 'none') {
+
+    console.log(':where is not supported');
+
+    return false;
+
+  } else {
+
+    console.log(':where is supported');
+
+    return true;
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// testValue('display', 'unset');
+
+// loadCssFile('test');
 
 
 function testValue(property, value) {
 
   var root = document.documentElement;
-
-  console.log(root.style);
 
   if (property in root.style) {
 
@@ -80,6 +154,20 @@ function testValue(property, value) {
     // Property is NOT Supported
 
   }
+
+}
+
+function loadCssFile(name) {
+
+  var head = document.getElementsByTagName('head')[0];
+
+  var link = document.createElement('link');
+
+  var base = head.getElementsByTagName('link')[0];
+
+  link.rel = 'stylesheet'; link.href = 'assets/css/legacy/' + name + '.css';
+
+  base.parentNode.insertBefore(link, base);
 
 }
 

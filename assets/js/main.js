@@ -83,7 +83,7 @@ function testWhere(element) {
 
   if (window.getComputedStyle(element, ':before').content.toString() === 'none') {
 
-    console.log(':where is not supported');
+    console.log(':where is not supported to string');
 
     return false;
 

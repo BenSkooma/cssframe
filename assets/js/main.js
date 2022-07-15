@@ -46,23 +46,52 @@ else if (!hasClass(el, className)) el.className += " " + className
 function testValue(property, value) {
 
   var html = document.documentElement;
-  var dummy = document.createElement('p');
 
-  dummy.style[property] = value;
+  var dummy = document.createElement('p');
 
   if (property in html.style) {
 
-    if (dummy.style[property]) { addClass(html, value); return true; }
+    console.log(property +' is supported');
 
-    addClass(html, 'no-' + value);
+    dummy.style[property] = value;
 
-    return false;
+    if (dummy.style[property]) {
+
+      addClass(html, value.toLowerCase());
+
+      console.log(value + ' is supported');
+
+    } else {
+
+      console.log(value +' is not supported');
+
+      addClass(html, 'no-' + value.toLowerCase());
+
+    }
+
+  } else {
+
+    console.log(property +' is not supported');
+
+    addClass(html, 'no-' + property.toLowerCase());
 
   }
 
-  addClass(html, 'no-' + property.toLowerCase());
+  
 
-  return false;
+  // if (property in html.style) {
+
+  //   if (dummy.style[property]) { addClass(html, value); }
+
+  //   addClass(html, 'no-' + value);
+
+  //   return false;
+
+  // }
+
+  // addClass(html, 'no-' + property.toLowerCase());
+
+  // return false;
 
 
 }

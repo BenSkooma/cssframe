@@ -81,7 +81,9 @@ else if (!hasClass(el, className)) el.className += " " + className
 
 function testWhere(element) {
 
-  if (window.getComputedStyle(element, ':before').content.toString() === 'none') {
+  var content = window.getComputedStyle(element, ':before').content;
+
+  if (!content || content === 'none') {
 
     console.log(':where is not supported to string');
 
@@ -89,7 +91,7 @@ function testWhere(element) {
 
   } else {
 
-    console.log(':where is supported');
+    console.log(':where is supported to string');
 
     return true;
 

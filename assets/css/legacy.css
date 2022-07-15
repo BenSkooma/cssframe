@@ -1,18 +1,33 @@
-.oldie *:not(iframe):not(canvas):not(img):not(svg):not(video) {
+/* Feature Detection for :where() */
+:where(html):before {display: none; content: 'true';}
+html:after {
+  display: none;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+html.no-where:after, html.no-all:after {
+  display: block;
+  content: 'no-all';
+}
+html.no-where.no-all:after {
+  display: block;
+  content: 'no-where, no-all';
+}
+
+
+.no-where * {
   margin: 0;  
   padding: 0;  
   border: 0;  
-  font-size: 100%;  
-  font: inherit;  
+  font: inherit;
   vertical-align: baseline;
-}
-@media (-ms-high-contrast: none) {
-  *:not(html):not(iframe):not(canvas):not(img):not(svg):not(video) {
-    margin: 0;  
-    padding: 0;  
-    border: 0;  
-    font-size: 100%;  
-    font: inherit;  
-    vertical-align: baseline;
-  }
+  line-height: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  background: transparent;
+  cursor: inherit;
 }

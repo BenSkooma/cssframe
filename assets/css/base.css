@@ -1,7 +1,4 @@
-
-/* Feature Detection for :where() */
-:where(html):before {display: none; content: 'applied';}
-
+/* @import url(modules/debug.css); */
 /*----------------------------------------------*/
 /* Config
 /*----------------------------------------------*/
@@ -10,33 +7,74 @@
   --debug: 1px solid red;
 }
 
+/* * {border: var(--debug) !important;} */
+
 /*----------------------------------------------*/
 /* Reset
 /*----------------------------------------------*/
 
-/* body {
-  background: rgb(177, 13, 166);
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/*----------------------------------------------*/
+/* General Setup
+/*----------------------------------------------*/
+
+/* html {
+  line-height: 1.15;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 } */
 
-.no-where body {
-  background-color: brown;
-}
-
-:where(body) {
-  background-color: rgb(212, 231, 6);
-}
 
 
-div.error {
-  display: none;
-}
 
-.no-where div.error {
-  position: fixed;
-  display: block;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  background: red;
-  color: white;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

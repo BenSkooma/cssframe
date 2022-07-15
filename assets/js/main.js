@@ -81,7 +81,7 @@ else if (!hasClass(el, className)) el.className += " " + className
 
 function testWhere(element) {
 
-  if (window.getComputedStyle(element, ':before').content === 'none') {
+  if (window.getComputedStyle(element, ':before').content.toString() === 'none') {
 
     console.log(':where is not supported');
 

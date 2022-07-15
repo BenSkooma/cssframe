@@ -52,7 +52,7 @@ function testValue(property, value) {
 
   if (property in html.style) {
 
-    if (dummy.style[property]) { return true; }
+    if (dummy.style[property]) { addClass(html, value); return true; }
 
     addClass(html, 'no-' + value);
 

@@ -7,6 +7,7 @@
 
 :root {
   --debug: 1px solid red;
+  --bg: limegreen;
 }
 
 /* * {border: var(--debug) !important;} */

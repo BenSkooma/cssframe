@@ -10,6 +10,14 @@ if (window.CSS) {
 
   console.log('CSS supported');
 
+
+  console.log('selector: ' + selector(document.documentElement));
+
+
+
+
+
+
   var test = CSS.supports('selector(:where(*))');
 
   if (test) {
@@ -26,6 +34,16 @@ if (window.CSS) {
 
 } else {
   console.log('CSS not supported');
+}
+
+
+function selector(element) {
+  
+  var content = window.getComputedStyle(element, '::after').content;
+  
+  if (!content || content === 'none') return false;
+
+  return true;
 }
 
 

@@ -1,6 +1,11 @@
 @import url(modules/reset.nowhere.css);
 @import url(modules/reset.where.css);
 
+@supports selector(*) {
+  html::after {
+    content: 'true';
+  }
+}
 
 /* :where(html):before {display: none; content: 'true';} */
 

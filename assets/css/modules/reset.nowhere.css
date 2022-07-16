@@ -1,4 +1,4 @@
-@supports not selector(*:where(:not(*))) {
+@supports not selector(*:where(*)) {
 
   html:not(div)::before {
     display: block;

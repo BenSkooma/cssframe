@@ -1,5 +1,5 @@
-@import url(modules/reset.nowhere.css);
-@import url(modules/reset.where.css);
+/* @import url(modules/reset.nowhere.css);
+@import url(modules/reset.where.css); */
 
 @supports selector(*) {
   html::after {
@@ -60,7 +60,7 @@ html * {
   box-sizing: inherit;
 } */
 
-html::before {
+/* html::before {
   display: none;
   padding: 20px;
   position: fixed;
@@ -69,11 +69,7 @@ html::before {
   background-color: black;
   color: white;
 }
-
-
-
-
-
+ */
 
 
 

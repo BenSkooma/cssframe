@@ -1,0 +1,14 @@
+@supports selector(:where(*)) {
+
+  html:not(div)::before {
+    display: block;
+    background-color: limegreen;
+    color: black;
+    content: '@supports: where true';
+  }
+
+  body {
+    background-color: aquamarine;
+  }
+
+}

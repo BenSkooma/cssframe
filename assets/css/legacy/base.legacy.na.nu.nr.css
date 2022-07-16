@@ -18,9 +18,17 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-  
+  margin: inherit;
+  padding: inherit;
 }
 
+
+@supports not (display: revert) {
+  body {
+    background-color: green;
+  }
+}
+ 
 
 
 /* body,

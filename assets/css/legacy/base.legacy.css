@@ -6,7 +6,7 @@ html:after {display: block;background-color: rgb(31, 199, 51);color: white;paddi
 /* Reset
 /*----------------------------------------------*/
 
-body, div, span, object,
+/* body, div, span, object,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
 del, dfn, em, ins, kbd, q, samp,
@@ -20,4 +20,5 @@ footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio {
   all: unset;
   display: revert;
-}
+} */
+

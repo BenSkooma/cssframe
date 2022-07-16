@@ -1,14 +1,28 @@
-:where(html):before {display: none; content: 'true';}
+@import url(modules/reset.nowhere.css);
+@import url(modules/reset.where.css);
+
+
+/* :where(html):before {display: none; content: 'true';} */
 
 /* @import url(modules/debug.css); */
 /*----------------------------------------------*/
 /* Config
 /*----------------------------------------------*/
 
-:root {
+/* :root {
   --debug: 1px solid red;
   --bg: limegreen;
 }
+
+body {
+  background: red;
+  background: var(--bg);
+  background: var(--test, --bg);
+}
+
+:root {
+  --bg: yellow;
+} */
 
 /* * {border: var(--debug) !important;} */
 
@@ -16,11 +30,14 @@
 /* Reset
 /*----------------------------------------------*/
 
-*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+/* *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
-  color: orange;
 }
+
+html * {
+  border: var(--debug);
+} */
 
 /*----------------------------------------------*/
 /* General Setup
@@ -37,6 +54,17 @@
 *::after {
   box-sizing: inherit;
 } */
+
+html::before {
+  display: none;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+}
+
 
 
 

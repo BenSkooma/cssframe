@@ -7,7 +7,21 @@
 // }
 
 if (window.CSS) {
+  
   console.log('CSS supported');
+
+  var test = CSS.supports('selector(:where(*))');
+
+  if (test) {
+
+    console.log ("where: " + test);
+
+  } else {
+
+    console.log ("NOPE.... where: " + test);
+
+  }
+
 } else {
   console.log('CSS not supported');
 }

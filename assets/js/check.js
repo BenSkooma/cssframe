@@ -19,7 +19,7 @@ var where = checkSelector(':where(*)', log);
 
 console.log('------------------------------');
 
-if(!supports) {
+if(!supports && !supportsSelector) {
 
   if(!supportsSelector) {
 

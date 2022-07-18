@@ -7,13 +7,13 @@
 
   var supports = checkRule('@supports', log);
   var supportsSelector = checkSupportsSelector(log);
-  // var where = checkSelector(':where(*)', log);
-  // var revert = checkStyle('color', 'revert');
-  // var unset = checkStyle('color', 'unset');
-  // var all = checkStyle('all');
+  var where = checkSelector(':where(*)', log);
+  var revert = checkStyle('display', 'revert');
+  var unset = checkStyle('display', 'unset');
+  var all = checkStyle('all');
 
   // checkStyle('box-sizing','border-box');
-  console.log(checkStyle('box-sizing','border-box'));
+  // console.log(checkStyle('box-sizing','border-box'));
 
   // console.log(checkStyle('box-sizing', 'content-box'));
 
@@ -41,13 +41,13 @@
 function checkStyle(prop, value) {
 
   value = arguments.length === 2 ? value : 'inherit';
+  
   var support = api(prop, value);
   if (support) return true;
 
   var dummy = document.createElement('div');
   var prefixes = ['Webkit', 'Moz', 'O', 'ms'];
   var length = prefixes.length;
-  var camelRe = /-([a-z]|[0-9])/ig;
 
   var camel = toCamelCase(prop);
   var capitalized = camel.charAt(0).toUpperCase() + camel.slice(1);
@@ -82,7 +82,7 @@ function checkStyle(prop, value) {
   }
 
   function toCamelCase(str) {
-    return str.toLowerCase().replace(camelRe, function(match, chr) { return chr.toUpperCase(); });
+    return str.toLowerCase().replace(/-([a-z]|[0-9])/ig, function(match, chr) { return chr.toUpperCase(); });
   }
 
   function canSetProperty(prop, camel, value) {

@@ -21,7 +21,7 @@
 
     console.log('Allright! @supports is supported!');
 
-  } else if (!supports) {
+  } else if (!supports && !supportsSelector) {
 
     console.log('Oh No! @supports is not supported!');
 

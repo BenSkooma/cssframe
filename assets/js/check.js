@@ -25,27 +25,25 @@
 
     console.log('Allright! @supports is supported!');
 
-    conditional.setAttribute('href', 'assets/css/modules/reset.nosupports.css');
-
   } else if (!supports) {
 
     console.log('Oh No! @supports is not supported!');
 
     // load('assets/css/modules/','reset.nosupports');
 
-    conditional.setAttribute('href', 'assets/css/modules/reset.nosupports.css');
+    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 
   } else if (!supportsSelector) {
 
     console.log('Oh No! @supports is not supported!');
 
-    conditional.setAttribute('href', 'assets/css/modules/reset.nosupports.css');
+    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 
   } else if (!supports && !supportsSelector) {
 
     console.log('Oh No! @supports is not supported!');
 
-    conditional.setAttribute('href', 'assets/css/modules/reset.nosupports.css');
+    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 
   }
 

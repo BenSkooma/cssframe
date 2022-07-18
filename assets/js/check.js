@@ -84,23 +84,35 @@ function checkStyle(prop, value) {
 
   while (!support && length--) {
 
-    var prefix = prefixes[length] + capitalized;
+    // var prefix = prefixes[length] + capitalized;
 
-    console.log(prefix);
+    // console.log(prefix);
 
-    // console.log('in while');
+    console.log('in while');
+
+    var property = prefixes[length] + capitalized;
+
+    console.log(property);
+
+    if (property in dummy.style) {
+      console.log('can set');
+    };
+
+
+
+
 
     // var prefixed = '-' + prefixes[length].toLowerCase() + '-' + prop;
 
     // console.log(prefixed);
     
-    // support = api(prefixed, value);
-    
-    // if (!support) {
-    //   camel = prefixes[length] + capitalized;
-    //   console.log(prefixed, camel, value);
-    //   support = canSetProperty(prefixed, camel, value);
-    // }
+    // if (canSetProperty(prefixed, camel, value)) return true;
+
+    // camel = prefixes[length] + capitalized;
+
+    // console.log(prefixed, camel, value);
+
+    // support = canSetProperty(prefixed, camel, value);
     
     // console.log(prop, ':', value, '=', support);
     // return support;

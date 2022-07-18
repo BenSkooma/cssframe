@@ -25,9 +25,22 @@
 
     console.log('Oh No! @supports is not supported!');
 
+    load('assets/css/modules/','reset.nosupports');
+
   }
 
 }(document)
+
+
+function load(path, name) {
+  var head = document.getElementsByTagName('head')[0];
+  var link = document.createElement('link');
+  var base = head.getElementsByTagName('link')[0];
+  link.rel = 'stylesheet';
+  link.media = 'all';
+  link.href = path + name + '.css';
+  base.parentNode.insertBefore(link, base);
+}
 
 
 /* Feature test CSS Property and value support

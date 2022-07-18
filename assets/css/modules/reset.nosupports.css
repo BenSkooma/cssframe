@@ -1,0 +1,54 @@
+/* block */ body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, dl, dt, dd, ol, ul, ol, form, legend, figure, figcaption, hr,
+/* list-item */ li, summary, 
+/* table */ table, thead, tbody, tfoot, col, colgroup, tr, td, th, caption,
+/* inline */ span, a, cite, code, del, dfn, em, ins, kbd, q, s, samp, object, small, strong, sub, sup, var, b, u, i, time, mark, abbr, label, embed, output, audio, br, bdo,
+/* inline-block */ select,textarea,button,input,
+/* decrapted inline */ acronym, big, strike, tt, center, hgroup, menu, frame, frameset, noframes, map {
+  all: unset;
+}
+
+/* not in unset but block */
+/* html, iframe, */
+/* not in unset but inline */
+/* img, canvas, video, svg */
+
+body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, form, legend, figure, figcaption, hr, dl, dt, dd, ol, ul, ol
+{ display: block }
+span, a, cite, code, del, dfn, em, ins, kbd, q, s, samp, object, small, strong, sub, sup, var, b, u, i, time, mark, abbr, label, embed, output, br, acronym, big, strike, tt, center, hgroup, menu, frame, frameset, noframes, map, audio, bdo
+{ display: inline }
+select, textarea, button, input
+{ display: inline-block }
+li, summary { display: list-item }
+table       { display: table }
+thead       { display: table-header-group }
+tbody       { display: table-row-group }
+tfoot       { display: table-footer-group }
+col         { display: table-column }
+colgroup    { display: table-column-group }
+tr          { display: table-row }
+td, th      { display: table-cell }
+caption     { display: table-caption }
+
+/* block */ body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, dl, dt, dd, ol, ul, ol, form, legend, figure, figcaption, hr,
+/* list-item */ li, summary, 
+/* table */ table, thead, tbody, tfoot, col, colgroup, tr, td, th, caption,
+/* inline */ span, a, cite, code, del, dfn, em, ins, kbd, q, s, samp, object, small, strong, sub, sup, var, b, u, i, time, mark, abbr, label, embed, output, audio, br, bdo,
+/* inline-block */ select,textarea,button,input,
+/* decrapted inline */ acronym, big, strike, tt, center, hgroup, menu, frame, frameset, noframes, map {
+  display: revert;
+}
+
+
+
+
+
+
+html:not(div)::before {
+  display: block;
+  background-color: red;
+  content: '@supports: where false';
+}
+
+body {
+  background-color: brown !important;
+}

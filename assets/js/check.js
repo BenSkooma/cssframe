@@ -1,5 +1,5 @@
-!function(root) {
-  "use strict";
+
+  // "use strict";
 
   var log = true;
 
@@ -17,11 +17,14 @@
 
   console.log('------------------------------');
 
-  if(!where) conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+  if(where === false) {
 
-  conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 
-}(document)
+  } 
+
+  // conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+
 
 
 function load(path, name) {

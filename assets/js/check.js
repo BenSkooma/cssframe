@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 var log = true;
 
@@ -7,12 +7,12 @@ var conditional = document.getElementById("conditional");
 console.log(conditional);
 
 var supports = checkRule('@supports', log);
-var supportsSelector = checkSupportsSelector(log);
-var hasWhere = checkSelector(':where(*)', log);
-var revert = checkStyle('display', 'revert');
-var unset = checkStyle('display', 'unset');
-var unset = checkStyle('all', 'unset');
-var all = checkStyle('all');
+// var supportsSelector = checkSupportsSelector(log);
+// var hasWhere = checkSelector(':where(*)', log);
+// var revert = checkStyle('display', 'revert');
+// var unset = checkStyle('display', 'unset');
+// var unset = checkStyle('all', 'unset');
+// var all = checkStyle('all');
 
 console.log('------------------------------');
 
@@ -23,15 +23,62 @@ if(!supports) {
 }
 
 
-function load(path, name) {
-  var head = document.getElementsByTagName('HEAD')[0];
-  var link = document.createElement('link');
-  var base = head.getElementsByTagName('link')[0];
-  link.rel = 'stylesheet';
-  link.media = 'all';
-  link.href = path + name + '.css';
-  base.parentNode.insertBefore(link, base);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function load(path, name) {
+//   var head = document.getElementsByTagName('HEAD')[0];
+//   var link = document.createElement('link');
+//   var base = head.getElementsByTagName('link')[0];
+//   link.rel = 'stylesheet';
+//   link.media = 'all';
+//   link.href = path + name + '.css';
+//   base.parentNode.insertBefore(link, base);
+// }
 
 
 /* Feature test CSS Property and value support

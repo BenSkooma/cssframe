@@ -6,6 +6,13 @@
   /* inline */ span, a, cite, code, del, dfn, em, ins, kbd, q, s, samp, object, small, strong, sub, sup, var, b, u, i, time, mark, abbr, label, embed, output, audio, br, bdo,
   /* inline-block */ select,textarea,button,input,
   /* decrapted inline */ acronym, big, strike, tt, center, hgroup, menu, frame, frameset, noframes, map {
+    margin: inherit;
+    padding: inherit;
+    background: inherit;
+    color: inherit;
+    border: inherit;
+    font: inherit;
+    all: inherit;
     all: unset;
   }
 

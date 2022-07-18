@@ -17,35 +17,7 @@
 
   console.log('------------------------------');
 
-  if (supports && supportsSelector) {
-
-    console.log('YEAH!!! @supports and also @supports selector is supported!');
-
-  } else if (supports && !supportsSelector) {
-
-    console.log('Allright! @supports is supported!');
-
-  } else if (!supports) {
-
-    console.log('Oh No! @supports is not supported!');
-
-    // load('assets/css/modules/','reset.nosupports');
-
-    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-
-  } else if (!supportsSelector) {
-
-    console.log('Oh No! @supports is not supported!');
-
-    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-
-  } else if (!supports && !supportsSelector) {
-
-    console.log('Oh No! @supports is not supported!');
-
-    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-
-  }
+  if(!where) conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 
 }(document)
 

@@ -1,5 +1,10 @@
 @supports selector(:where(*)) {
 
+  *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+  }
+
   html:not(div)::before {
     display: block;
     background-color: limegreen;

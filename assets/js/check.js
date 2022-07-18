@@ -3,19 +3,12 @@
 
   var log = true;
 
-
-
   var supports = checkRule('@supports', log);
   var supportsSelector = checkSupportsSelector(log);
   var where = checkSelector(':where(*)', log);
   var revert = checkStyle('display', 'revert');
   var unset = checkStyle('display', 'unset');
   var all = checkStyle('all');
-
-  // checkStyle('box-sizing','border-box');
-  // console.log(checkStyle('box-sizing','border-box'));
-
-  // console.log(checkStyle('box-sizing', 'content-box'));
 
   console.log('------------------------------');
 

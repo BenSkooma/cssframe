@@ -1,11 +1,11 @@
 @import url(modules/reset.nowhere.css);
 @import url(modules/reset.where.css);
 
-@supports selector(*) {
+/* @supports selector(*) {
   html::after {
     content: 'true';
   }
-}
+} */
 
 /* :where(html):before {display: none; content: 'true';} */
 
@@ -38,10 +38,6 @@ body {
 /* *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
-}
-
-html * {
-  border: var(--debug);
 } */
 
 /*----------------------------------------------*/

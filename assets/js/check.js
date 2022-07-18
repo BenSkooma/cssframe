@@ -7,7 +7,7 @@ var conditional = document.getElementById("conditional");
 console.log(conditional);
 
 var supports = checkRule('@supports', log);
-// var supportsSelector = checkSupportsSelector(log);
+var supportsSelector = checkSupportsSelector(log);
 // var hasWhere = checkSelector(':where(*)', log);
 // var revert = checkStyle('display', 'revert');
 // var unset = checkStyle('display', 'unset');
@@ -16,7 +16,7 @@ var supports = checkRule('@supports', log);
 
 console.log('------------------------------');
 
-if(!supports) {
+if(!supportsSelector) {
 
   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 

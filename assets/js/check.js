@@ -16,7 +16,17 @@ var where = checkSelector(':where(*)', log);
 
 console.log('------------------------------');
 
-if(!supportsSelector || !where) {
+if(!supportsSelector) {
+
+  console.log('hit supportsSelector');
+
+  conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+
+}
+
+if(!where) {
+
+  console.log('hit where');
 
   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 

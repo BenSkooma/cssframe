@@ -3,6 +3,10 @@
 
   var log = true;
 
+  var conditional = document.querySelector('.conditional');
+
+  console.log(conditional);
+
   var supports = checkRule('@supports', log);
   var supportsSelector = checkSupportsSelector(log);
   var where = checkSelector(':where(*)', log);
@@ -25,19 +29,21 @@
 
     console.log('Oh No! @supports is not supported!');
 
-    load('assets/css/modules/','reset.nosupports');
+    // load('assets/css/modules/','reset.nosupports');
+
+    conditional.setAttribute('href', 'assets/css/modules/reset.nosupports.css');
 
   } else if (!supportsSelector) {
 
     console.log('Oh No! @supports is not supported!');
 
-    load('assets/css/modules/','reset.nosupports');
+    conditional.setAttribute('href', 'assets/css/modules/reset.nosupports.css');
 
   } else if (!supports && !supportsSelector) {
 
     console.log('Oh No! @supports is not supported!');
 
-    load('assets/css/modules/','reset.nosupports');
+    conditional.setAttribute('href', 'assets/css/modules/reset.nosupports.css');
 
   }
 

@@ -21,6 +21,18 @@
 
     console.log('Allright! @supports is supported!');
 
+  } else if (!supports) {
+
+    console.log('Oh No! @supports is not supported!');
+
+    load('assets/css/modules/','reset.nosupports');
+
+  } else if (!supportsSelector) {
+
+    console.log('Oh No! @supports is not supported!');
+
+    load('assets/css/modules/','reset.nosupports');
+
   } else if (!supports && !supportsSelector) {
 
     console.log('Oh No! @supports is not supported!');
@@ -33,7 +45,7 @@
 
 
 function load(path, name) {
-  var head = document.getElementsByTagName('head')[0];
+  var head = document.getElementsByTagName('HEAD')[0];
   var link = document.createElement('link');
   var base = head.getElementsByTagName('link')[0];
   link.rel = 'stylesheet';

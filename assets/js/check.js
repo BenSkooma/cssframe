@@ -14,23 +14,30 @@ var where = checkSelector(':where(*)', log);
 // var unset = checkStyle('all', 'unset');
 // var all = checkStyle('all');
 
+// var cases = [supports, supportsSelector, where];
+
+
 console.log('------------------------------');
 
-if(!supportsSelector) {
+if(!supports) {
 
-  console.log('hit supportsSelector');
+  if(!supportsSelector) {
 
-  conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+    console.log('hit supportsSelector');
+  
+    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+  
+  } else if (!supportsSelector && !where) {
+  
+    console.log('hit where');
+  
+    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+  
+  }
 
 }
 
-if(!where) {
 
-  console.log('hit where');
-
-  conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-
-}
 
 
 

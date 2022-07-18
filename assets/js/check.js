@@ -25,6 +25,8 @@
 
     console.log('Allright! @supports is supported!');
 
+    conditional.setAttribute('href', 'assets/css/modules/reset.nosupports.css');
+
   } else if (!supports) {
 
     console.log('Oh No! @supports is not supported!');

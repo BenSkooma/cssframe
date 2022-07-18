@@ -10,6 +10,11 @@
   color: inherit;
   border: inherit;
   font: inherit;
+  text-decoration: inherit;
+  border-style: inherit;
+  outline: inherit;
+  line-height: inherit;
+  cursor: inherit;
   all: inherit;
   all: unset;
 }

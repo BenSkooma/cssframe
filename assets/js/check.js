@@ -12,9 +12,8 @@
   // var unset = checkStyle('color', 'unset');
   // var all = checkStyle('all');
 
-  // var all = property('box-sizing');
-
-  checkStyle('box-sizing', 'border-box');
+  // checkStyle('box-sizing','border-box');
+  console.log(checkStyle('box-sizing','border-box'));
 
   // console.log(checkStyle('box-sizing', 'content-box'));
 
@@ -37,88 +36,37 @@
 }(document)
 
 
-  function property(property) {
-    if (property in document.documentElement.style) {
-      console.log(property +' is supported');
-      return true;
-    }
-    console.log(property +' is not supported');
-    return false;
-  }
-
-
-
-
-
+/* Feature test CSS Property and value support
+/*----------------------------------------------------*/
 function checkStyle(prop, value) {
 
   value = arguments.length === 2 ? value : 'inherit';
-
   var support = api(prop, value);
-
-  // if (support) return true;
+  if (support) return true;
 
   var dummy = document.createElement('div');
   var prefixes = ['Webkit', 'Moz', 'O', 'ms'];
   var length = prefixes.length;
   var camelRe = /-([a-z]|[0-9])/ig;
-  // var camelRe = /[^a-zA-Z0-9]+(.)/g;
-
-  // console.log(prop, value);
 
   var camel = toCamelCase(prop);
-  
-  // console.log(camel);
-
   var capitalized = camel.charAt(0).toUpperCase() + camel.slice(1);
-  
-  // console.log(capitalized);
-
-  // console.log(prop, camel, value);
-
-  console.log('.................');
 
   support = canSetProperty(prop, camel, value);
 
-  // console.log(support);
-
   while (!support && length--) {
-
-    // var prefix = prefixes[length] + capitalized;
-
-    // console.log(prefix);
-
-    console.log('in while');
-
-    var property = prefixes[length] + capitalized;
-
-    console.log(property);
-
-    if (property in dummy.style) {
-      console.log('can set');
-    };
-
-
-
-
-
-    // var prefixed = '-' + prefixes[length].toLowerCase() + '-' + prop;
-
-    // console.log(prefixed);
-    
-    // if (canSetProperty(prefixed, camel, value)) return true;
-
-    // camel = prefixes[length] + capitalized;
-
-    // console.log(prefixed, camel, value);
-
-    // support = canSetProperty(prefixed, camel, value);
-    
-    // console.log(prop, ':', value, '=', support);
-    // return support;
-
+    var prefixed = '-' + prefixes[length].toLowerCase() + '-' + prop;
+    support = api(prefixed, value);
+    if (!support) {
+      camel = prefixes[length] + capitalized;
+      support = canSetProperty(prefixed, camel, value);
+    }
   }
 
+  console.log(prop, ':', value, '=', support);
+  return support;
+
+  /* ---------------------------------- */
 
   function api(prop, value) {
     if (window.CSS && CSS.supports) {
@@ -138,44 +86,13 @@ function checkStyle(prop, value) {
   }
 
   function canSetProperty(prop, camel, value) {
-
-    // console.log('.................');
-    console.log(dummy.style);
-
-    //   function property(property, html) {
-//     if (property in html.style) {
-//       console.log(property +' is supported');
-//       return true;
-//     }
-//     console.log(property +' is not supported');
-//     return false;
-//   }
-
-    // if (prop in document.documentElement.style) {
-    //   console.log(prop, 'is supported');
-    //   return true;
-    // }
-
     var support = camel in dummy.style;
-
-    // console.log(camel);
-
     if (value === 'inherit') return support;
-
     dummy.style.cssText = prop + ':' + value;
     return support && dummy.style[camel] !== '';
   }
-
-
   
 }
-
-
-
-
-
-
-
 
 
 

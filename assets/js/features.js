@@ -13,9 +13,9 @@
 // }
 
 
-  console.log(window.CSSSupportsRule);
+  // console.log(window.CSSSupportsRule);
 
-  console.log(isAtRuleSupported('@supports'));
+  // console.log(isAtRuleSupported('@supports'));
 
 
 

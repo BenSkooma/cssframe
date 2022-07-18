@@ -1,30 +1,27 @@
+"use strict";
 
-  // "use strict";
+var log = true;
 
-  var log = true;
+var conditional = document.getElementById("conditional");
 
-  var conditional = document.querySelector('.conditional');
+console.log(conditional);
 
-  console.log(conditional);
+var supports = checkRule('@supports', log);
+var supportsSelector = checkSupportsSelector(log);
+var where = checkSelector(':where(*)', log);
+var revert = checkStyle('display', 'revert');
+var unset = checkStyle('display', 'unset');
+var unset = checkStyle('all', 'unset');
+var all = checkStyle('all');
 
-  var supports = checkRule('@supports', log);
-  var supportsSelector = checkSupportsSelector(log);
-  var where = checkSelector(':where(*)', log);
-  var revert = checkStyle('display', 'revert');
-  var unset = checkStyle('display', 'unset');
-  var unset = checkStyle('all', 'unset');
-  var all = checkStyle('all');
+console.log('------------------------------');
 
-  console.log('------------------------------');
-
-  if(where === false) {
-
-    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-
-  } 
+if(where === false) {
 
   // conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+  conditional.href = 'assets/css/reset.legacy.css';
 
+}
 
 
 function load(path, name) {

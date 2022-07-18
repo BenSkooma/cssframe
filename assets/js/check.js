@@ -19,6 +19,8 @@
 
   if(!where) conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 
+  conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+
 }(document)
 
 

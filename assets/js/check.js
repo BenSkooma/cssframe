@@ -8,6 +8,7 @@
   var where = checkSelector(':where(*)', log);
   var revert = checkStyle('display', 'revert');
   var unset = checkStyle('display', 'unset');
+  var unset = checkStyle('all', 'unset');
   var all = checkStyle('all');
 
   console.log('------------------------------');

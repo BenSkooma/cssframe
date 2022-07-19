@@ -1,4 +1,4 @@
-@supports not selector(:where(*)) {
+@supports not (selector(:where(*)) or (display: unset)) {
 
   /* block */ body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, dl, dt, dd, ol, ul, ol, form, legend, figure, figcaption, hr,
   /* list-item */ li, summary, 

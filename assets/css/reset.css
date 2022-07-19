@@ -1,6 +1,8 @@
 /* @supports not (selector(:where(*)) or (display: unset) or (all: unset)) { */
 @supports not (selector(:where(*))) {
 
+  html::before { content: 'applied'; }
+
   /* block */ body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, dl, dt, dd, ol, ul, ol, form, legend, figure, figcaption, hr,
   /* list-item */ li, summary, 
   /* table */ table, thead, tbody, tfoot, col, colgroup, tr, td, th, caption,
@@ -48,7 +50,7 @@
     display: revert;
   }
 
-  html:not(div)::before {
+  html:not(div)::after {
     display: block;
     background-color: red;
     content: '@supports: where false';
@@ -67,7 +69,7 @@
     display: revert;
   }
 
-  html:not(div)::before {
+  html:not(div)::after {
     display: block;
     background-color: limegreen;
     color: black;

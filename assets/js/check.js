@@ -9,28 +9,57 @@ console.log(conditional);
 var supports = checkRule('@supports', log);
 var supportsSelector = checkSupportsSelector(log);
 var where = checkSelector(':where(*)', log);
-var safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent); //check if safari
+// var safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent); //check if safari
 // var revert = checkStyle('display', 'revert');
 // var unset = checkStyle('display', 'unset');
 // var unset = checkStyle('all', 'unset');
 // var all = checkStyle('all');
 
-console.log(navigator.userAgent);
-console.log(safari);
+// console.log(navigator.userAgent);
+// console.log(safari);
 
 
 
 // var condition = [supports, supportsSelector, where];
 // var condition_i = condition.length;
 
+if (userAgent.includes('Safari/')) {
+  // Firefox
+  console.log(`Safari v${userAgent.split('Safari/')[1]}`)
+}
+
 
 
 // if (!supportsSelector && !where) {
-if (!supports || safari) {
+if (!supports) {
   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 }
 
 
+
+
+// function get_browser() {
+//   var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
+//   if(/trident/i.test(M[1])){
+//       tem=/\brv[ :]+(\d+)/g.exec(ua) || []; 
+//       return {name:'IE',version:(tem[1]||'')};
+//       }   
+//   if(M[1]==='Chrome'){
+//       tem=ua.match(/\bOPR|Edge\/(\d+)/)
+//       if(tem!=null)   {return {name:'Opera', version:tem[1]};}
+//       }   
+//   M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+//   if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+//   return {
+//     name: M[0],
+//     version: M[1]
+//   };
+// }
+
+// var browser=get_browser(); // browser.name = 'Chrome'
+//                          // browser.version = '40'
+
+// console.log(browser);
 
 
 // } else if (!where) {

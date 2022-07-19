@@ -1,18 +1,15 @@
-// "use strict";
-
 var log = true;
 
 var conditional = document.getElementById("conditional");
 
 var supports = checkRule('@supports', log);
-var supportsSelector = checkSupportsSelector(log);
 var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement);
 
 if (!supports) {
   setFallback();
-} else {
-  if (!where && !applied) setFallback();
+} else if (!where && !applied) {
+  setFallback();
 }
 
 

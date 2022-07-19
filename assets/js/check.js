@@ -9,12 +9,14 @@ console.log(conditional);
 var supports = checkRule('@supports', log);
 var supportsSelector = checkSupportsSelector(log);
 var where = checkSelector(':where(*)', log);
+var safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent); //check if safari
 // var revert = checkStyle('display', 'revert');
 // var unset = checkStyle('display', 'unset');
 // var unset = checkStyle('all', 'unset');
 // var all = checkStyle('all');
 
-
+console.log(navigator.userAgent);
+console.log(safari);
 
 
 
@@ -24,7 +26,7 @@ var where = checkSelector(':where(*)', log);
 
 
 // if (!supportsSelector && !where) {
-if (!supports) {
+if (!supports || safari) {
   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 }
 

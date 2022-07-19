@@ -44,7 +44,11 @@ body {
 /* General Setup
 /*----------------------------------------------*/
 
-html:not(div) {
+:root {
+  --border: 1px solid red;
+}
+
+html {
   line-height: 1.15;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -61,6 +65,8 @@ html:not(div) {
   -ms-box-sizing: inherit;
   box-sizing: inherit;
 }
+
+* {border: var(--border);}
 
 /* html::before {
   display: none;

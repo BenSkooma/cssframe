@@ -23,7 +23,8 @@ var where = checkSelector(':where(*)', log);
 
 
 
-if (!supportsSelector && !where) {
+// if (!supportsSelector && !where) {
+if (!supports) {
   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 }
 

@@ -14,16 +14,57 @@ var where = checkSelector(':where(*)', log);
 // var unset = checkStyle('all', 'unset');
 // var all = checkStyle('all');
 
-// var cases = [supports, supportsSelector, where];
 
 
-console.log('------------------------------');
 
-if(!where || !supportsSelector) {
 
+// var condition = [supports, supportsSelector, where];
+// var condition_i = condition.length;
+
+
+
+if (!supportsSelector && !where) {
   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-
 }
+
+
+
+
+// } else if (!where) {
+//   console.log('not supports where');
+// }
+
+
+// if(!where || !supportsSelector) {
+
+//   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+
+// } else if ()
+
+
+// for (var i = 0; i < condition_i; i++) { // shows 0, then 1, then 2
+  
+//   console.log(condition[i]);
+
+//   if (condition[i]) {
+//     conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+//     continue;
+//   }
+
+
+
+// }
+
+
+// while (condition[condition_i] && condition_i--) {
+
+//   console.log(!condition[condition_i], condition_i);
+
+//   if(!condition[condition_i]) {
+//    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+//   }
+
+// }
 
 
 
@@ -92,8 +133,10 @@ function checkStyle(prop, value) {
 
   value = arguments.length === 2 ? value : 'inherit';
   
-  var support = api(prop, value);
-  if (support) return true;
+  // var support = api(prop, value);
+  // if (support) return true;
+
+  if (window.CSS && CSS.supports) return api(prop, value);
 
   var dummy = document.createElement('div');
   var prefixes = ['Webkit', 'Moz', 'O', 'ms'];
@@ -119,16 +162,13 @@ function checkStyle(prop, value) {
   /* ---------------------------------- */
 
   function api(prop, value) {
-    if (window.CSS && CSS.supports) {
-      var result = CSS.supports(prop, value);
-      if (value === 'inherit') {
-        console.log('API', prop, '=', result);
-      } else {
-        console.log('API', prop, ':', value, '=', result);
-      }
-      return result;
+    var result = CSS.supports(prop, value);
+    if (value === 'inherit') {
+      console.log('API', prop, '=', result);
+    } else {
+      console.log('API', prop, ':', value, '=', result);
     }
-    return false;
+    return result;
   }
 
   function toCamelCase(str) {
@@ -173,7 +213,7 @@ function checkSupportsSelector(log) {
 /*----------------------------------------------------*/
 function checkSelector(selector, log) {
 
-  if (api(selector)) return true;
+  if (window.CSS && CSS.supports) return api(selector);
 
   var head = document.head || document.documentElement;
   var style = document.createElement('style');
@@ -188,13 +228,9 @@ function checkSelector(selector, log) {
   return result;
 
   function api(selector) {
-    if (window.CSS && CSS.supports) {
-      var support = CSS.supports('selector('+ selector +')');
-      if (log) console.log('API', selector, '=', support);
-      return true;
-    } else {
-      return false;
-    }
+    var support = CSS.supports('selector('+ selector +')');
+    if (log) console.log('API', selector, '=', support);
+    return support;
   }
 
   function append(selector) {

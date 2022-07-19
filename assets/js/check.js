@@ -19,21 +19,9 @@ var where = checkSelector(':where(*)', log);
 
 console.log('------------------------------');
 
-if(!supports || !supportsSelector) {
+if(!where || !supportsSelector) {
 
-  if(!supportsSelector) {
-
-    console.log('hit supportsSelector');
-  
-    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-  
-  } else if (!supportsSelector && !where) {
-  
-    console.log('hit where');
-  
-    conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-  
-  }
+  conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 
 }
 

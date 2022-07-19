@@ -31,7 +31,7 @@ console.log('applied', applied);
 // if (!supportsSelector && !where) {
 if (!supports) {
   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-} else if (!supports && !applied) {
+} else if (!where && !applied) {
   conditional.setAttribute('href', 'assets/css/reset.legacy.css');
 }
 

@@ -1,9 +1,0 @@
-html:not(div)::before {
-display: block;
-background-color: red;
-content: '@supports: where false => JS Version';
-}
-
-body {
-background-color: rgb(216, 184, 24) !important;
-}

@@ -9,9 +9,11 @@ var supportsSelector = checkSupportsSelector(log);
 var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement);
 
-if (!supports && !applied) {
+if (!supports) {
   setFallback();
-} 
+} else {
+  if (!where && !applied) setFallback();
+}
 
 
 function setFallback() {

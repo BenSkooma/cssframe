@@ -4,40 +4,19 @@ var log = true;
 
 var conditional = document.getElementById("conditional");
 
-console.log(conditional);
-
 var supports = checkRule('@supports', log);
 var supportsSelector = checkSupportsSelector(log);
 var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement);
-// var safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent); //check if safari
-// var revert = checkStyle('display', 'revert');
-// var unset = checkStyle('display', 'unset');
-// var unset = checkStyle('all', 'unset');
-// var all = checkStyle('all');
+
+if (!supports && !applied) {
+  setFallback();
+} 
 
 
-// console.log(navigator.userAgent.split('Safari/')[1]);
-
-console.log('applied', applied);
-
-
-
-// var condition = [supports, supportsSelector, where];
-// var condition_i = condition.length;
-
-
-
-// if (!supportsSelector && !where) {
-if (!supports) {
-  conditional.setAttribute('href', 'assets/css/reset.legacy.css');
-} else if (!where && !applied) {
-  conditional.setAttribute('href', 'assets/css/reset.legacy.css');
+function setFallback() {
+  conditional.setAttribute('href', 'assets/css/reset.legacy.js.css');
 }
-
-
-
-
 
 
 

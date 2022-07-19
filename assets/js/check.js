@@ -1,23 +1,15 @@
 var log = true;
 
 var conditional = document.getElementById("conditional");
-
+var fallback_css = 'assets/css/reset.legacy.js.css';
 var supports = checkRule('@supports', log);
 var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement);
 
-if (!supports) {
-  setFallback();
-} else if (!where && !applied) {
-  setFallback();
-}
+if (!supports || !where && !applied) setFallback();
+// else if (!where && !applied) setFallback();
 
-
-function setFallback() {
-  conditional.setAttribute('href', 'assets/css/reset.legacy.js.css');
-}
-
-
+function setFallback() { conditional.setAttribute('href', fallback_css); }
 
 
 

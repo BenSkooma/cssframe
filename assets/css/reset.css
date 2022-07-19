@@ -7,7 +7,7 @@
     display: revert;
   }
 
-  html:not(div)::after {
+  html::after {
     display: block;
     background-color: limegreen;
     color: black;

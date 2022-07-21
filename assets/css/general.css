@@ -1,0 +1,31 @@
+@import url(modules/hyperlinks.css);
+
+/* Config
+/*----------------------------------------------*/
+
+:root {
+  --page-font: 'Open Sans';
+  --page-background-color: hsl(0, 0%, 100%);
+  --page-text-color: hsl(0, 0%, 0%);
+  --page-selection-color: hsl(0, 0%, 100%);
+  --page-selection-background-color: hsl(0, 0%, 0%);
+}
+
+
+::selection {
+  color: var(--page-selection-color);
+  background: var(--page-selection-background-color);
+}
+::-moz-selection {
+  color: var(--page-selection-color);
+  background: var(--page-selection-background-color);
+}
+
+
+
+
+
+
+
+
+

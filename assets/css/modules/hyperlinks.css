@@ -1,0 +1,145 @@
+/* Hyperlinks
+/*----------------------------------------------*/
+
+:root {
+  --link-background-color: var(--page-background-color);
+  --link-color: hsl(222, 100%, 50%);
+  --link-color-hover-active: hsl(0, 82%, 44%);
+  --link-color-focus: hsl(0, 0%, 100%);
+  --link-background-color-focus: hsl(0, 0%, 0%);
+}
+
+a {
+  text-underline-offset: 0.2em; 
+  text-decoration-thickness: 1px;
+}
+
+/* @media (min-width: 80rem) {
+  a,a::after {text-decoration-thickness: 2px;}
+} */
+
+@supports (selector(a:not(nav a))) {
+
+  a:not(nav a) {
+    /* text-shadow: 0.03em 0 var(--link-background-color), -0.03em 0 var(--link-background-color), 0 0.03em var(--link-background-color), 0 -0.03em var(--link-background-color), 0.06em 0 var(--link-background-color), -0.06em 0 var(--link-background-color), 0.09em 0 var(--link-background-color), -0.09em 0 var(--link-background-color), 0.12em 0 var(--link-background-color), -0.12em 0 var(--link-background-color), 0.15em 0 var(--link-background-color), -0.15em 0 var(--link-background-color);
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 1px 1px;
+    background-repeat: repeat-x;
+    background-position: bottom 1px center; */
+    text-shadow: 0.05em 0 0 var(--link-background-color), -0.05em 0 0 var(--link-background-color),
+                 0 0.05em 0 var(--link-background-color), 0 -0.05em 0 var(--link-background-color),
+                 0.1em 0 0 var(--link-background-color), -0.1em 0 0 var(--link-background-color),
+                 0 0.1em 0 var(--link-background-color), 0 -0.1em 0 var(--link-background-color);
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-repeat: repeat-x;
+    background-position: bottom 1px center;
+    background-size: 100% 0.055em;
+    text-decoration: none;
+  }
+  
+  a:not(nav a) {
+    color: var(--link-color);
+  }
+  a:not(nav a):hover,
+  a:not(nav a):active {
+    color: var(--link-color-hover-active);
+  }
+  a:not(nav a):focus-visible {
+    color: var(--link-color-focus);
+    text-shadow: 0.03em 0 var(--link-background-color-focus), -0.03em 0 var(--link-background-color-focus), 0 0.03em var(--link-background-color-focus), 0 -0.03em var(--link-background-color-focus), 0.06em 0 var(--link-background-color-focus), -0.06em 0 var(--link-background-color-focus), 0.09em 0 var(--link-background-color-focus), -0.09em 0 var(--link-background-color-focus), 0.12em 0 var(--link-background-color-focus), -0.12em 0 var(--link-background-color-focus), 0.15em 0 var(--link-background-color-focus), -0.15em 0 var(--link-background-color-focus);
+    background-image: linear-gradient(var(--link-color-focus), var(--link-color-focus));
+    background-color: var(--link-background-color-focus);
+    outline: 4px solid black;
+  }
+  
+  a:not(nav a)::selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+  a:not(nav a)::-moz-selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+
+}
+
+@supports not (selector(a:not(nav a))) {
+
+  p a {
+    /* text-shadow: 0.03em 0 var(--link-background-color), -0.03em 0 var(--link-background-color), 0 0.03em var(--link-background-color), 0 -0.03em var(--link-background-color), 0.06em 0 var(--link-background-color), -0.06em 0 var(--link-background-color), 0.09em 0 var(--link-background-color), -0.09em 0 var(--link-background-color), 0.12em 0 var(--link-background-color), -0.12em 0 var(--link-background-color), 0.15em 0 var(--link-background-color), -0.15em 0 var(--link-background-color);
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 1px 1px;
+    background-repeat: repeat-x;
+    background-position: bottom 1px center; */
+    text-shadow: 0.05em 0 0 var(--link-background-color), -0.05em 0 0 var(--link-background-color),
+                 0 0.05em 0 var(--link-background-color), 0 -0.05em 0 var(--link-background-color),
+                 0.1em 0 0 var(--link-background-color), -0.1em 0 0 var(--link-background-color),
+                 0 0.1em 0 var(--link-background-color), 0 -0.1em 0 var(--link-background-color);
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-repeat: repeat-x;
+    background-position: bottom 1px center;
+    background-size: 1px 1px;
+    text-decoration: none;
+    border: 3px solid red;
+  }
+  
+  p a {
+    color: var(--link-color);
+  }
+  p a:hover,
+  p a:active {
+    color: var(--link-color-hover-active);
+  }
+  p a:focus-visible {
+    color: var(--link-color-focus);
+    text-shadow: 0.03em 0 var(--link-background-color-focus), -0.03em 0 var(--link-background-color-focus), 0 0.03em var(--link-background-color-focus), 0 -0.03em var(--link-background-color-focus), 0.06em 0 var(--link-background-color-focus), -0.06em 0 var(--link-background-color-focus), 0.09em 0 var(--link-background-color-focus), -0.09em 0 var(--link-background-color-focus), 0.12em 0 var(--link-background-color-focus), -0.12em 0 var(--link-background-color-focus), 0.15em 0 var(--link-background-color-focus), -0.15em 0 var(--link-background-color-focus);
+    background-image: linear-gradient(var(--link-color-focus), var(--link-color-focus));
+    background-color: var(--link-background-color-focus);
+    outline: 4px solid black;
+  }
+  
+  p a::selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+  p a::-moz-selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+
+}
+
+
+
+@media (-ms-high-contrast: none) {
+
+  p a {
+    color: var(--link-color);
+    text-shadow: 0.03em 0 var(--link-background-color), -0.03em 0 var(--link-background-color), 0 0.03em var(--link-background-color), 0 -0.03em var(--link-background-color), 0.06em 0 var(--link-background-color), -0.06em 0 var(--link-background-color), 0.09em 0 var(--link-background-color), -0.09em 0 var(--link-background-color), 0.12em 0 var(--link-background-color), -0.12em 0 var(--link-background-color), 0.15em 0 var(--link-background-color), -0.15em 0 var(--link-background-color);
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 1px 1px;
+    background-repeat: repeat-x;
+    background-position: 0% 95%;
+    text-decoration: none;
+    border: 3px solid blue;
+  }
+
+  p a:hover {
+    color: var(--link-color-hover-active);
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+  p a:focus {
+    color: var(--link-color-focus);
+    background-color: var(--link-background-color-focus);
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+  p a:active {
+    color: var(--link-color-hover-active);
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+
+}

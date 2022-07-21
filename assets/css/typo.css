@@ -1,26 +1,35 @@
 /* Font-Size
 /*------------------------------------------*/
 
-html {font-size: 100%;}
-
 body {
   /* line-height: 1.5; */
-  font-size: 1rem;
+  /* font-size: 1rem; */
   /* font-size: calc(1rem + 0.1vw); */
 }
 
-main {max-width: 60rem;}
+/* main {max-width: 60rem;}
+
+@media (min-width: 60rem) {
+
+  html {font-size: 115%;}
+
+}
+
+@media (min-width: 80rem) {
+
+  html {font-size: 135%;}
+
+}
 
 @media (min-width: 100rem) {
 
   html {font-size: 150%;}
-  a, a::after {text-decoration-thickness: 2px;}
 
-}
+} */
 /* Font-Style
 /*------------------------------------------*/
 
-:root {font-family: var(--font-family), system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
+:root {font-family: var(--page-font), system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
 
 /* Font-Family Import
 /*------------------------------------------*/

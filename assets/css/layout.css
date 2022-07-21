@@ -1,15 +1,9 @@
 @import url('modules/helpers.css');
-/* @import url('modules/debug.css'); */
 
 /* General
 /*---------------------------------------------------*/
 
 html, body {height: 100%;}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--p-color);
-}
 
 /* Hyperlinks
 /*---------------------------------------------------*/

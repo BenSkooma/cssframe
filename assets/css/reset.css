@@ -7,15 +7,4 @@
     display: revert;
   }
 
-  html::after {
-    display: block;
-    background-color: limegreen;
-    color: black;
-    content: '@supports: where true';
-  }
-
-  body {
-    background-color: aquamarine;
-  }
-
 }

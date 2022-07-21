@@ -33,7 +33,9 @@ function checkSelector(selector, log) {
   var sheet = style.sheet;
   var result = append(selector);
   if (log) console.log(selector, '=', result);
+
   return result;
+
   function api(selector) {
     var support = CSS.supports('selector('+ selector +')');
     if (log) console.log('API', selector, '=', support);

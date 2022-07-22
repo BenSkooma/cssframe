@@ -1,3 +1,0 @@
-* {background: rgba(38, 86, 134, 0.1) !important; outline: 1px solid rgba(1, 18, 255, 0.188) !important;}
-
-body::before {content: var(--debug-vars-test);display: block;background: greenyellow;border-bottom: 1px solid;}

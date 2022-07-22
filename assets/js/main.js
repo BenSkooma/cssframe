@@ -5,6 +5,19 @@
 
 /* ---------------------------------- */
 
-cssVars({ shadowDOM : true });
+cssVars({
+  rootElement   : document,
+  shadowDOM     : false,
+  include       : 'link[rel=stylesheet],style,import',
+  exclude       : '',
+  variables     : {},
+  onlyLegacy    : true,
+  preserveStatic: true,
+  preserveVars  : false,
+  silent        : false,
+  updateDOM     : true,
+  updateURLs    : true,
+  watch         : false
+});
 
 /* ---------------------------------- */

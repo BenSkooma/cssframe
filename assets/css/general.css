@@ -1,31 +1,93 @@
-@import url(modules/hyperlinks.css);
+@import 'modules/vendor/sanitize.css';
+@import 'modules/typo.css';
+@import 'modules/hyperlinks.css';
 
 /* Config
-/*----------------------------------------------*/
-
+/* ========================================================================== */
+ 
 :root {
-  --page-font: 'Open Sans';
-  --page-background-color: hsl(0, 0%, 100%);
-  --page-text-color: hsl(0, 0%, 0%);
-  --page-selection-color: hsl(0, 0%, 100%);
-  --page-selection-background-color: hsl(0, 0%, 0%);
+  /* Typo */
+  --font-family-primary: 'Open Sans';
+
+  /* Colors */
+  --color-background-primary: hsl(0, 0%, 100%);
 }
 
+/* General
+/* ========================================================================== */
 
-::selection {
-  color: var(--page-selection-color);
-  background: var(--page-selection-background-color);
+@-ms-viewport {width: device-width;}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  background-repeat: no-repeat;
+  font: inherit;
+  padding: 0;
+  margin: 0;
 }
-::-moz-selection {
-  color: var(--page-selection-color);
-  background: var(--page-selection-background-color);
+
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
 
+html,
+body {
+  height: 100%;
+}
 
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
 
+iframe,
+canvas,
+img,
+svg,
+picture,
+input,
+video,
+select,
+textarea {
+  height: auto;
+  max-width: 100%;
+}
 
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
 
-
-
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -2,6 +2,8 @@
 @import 'modules/typo.css';
 @import 'modules/hyperlinks.css';
 
+/* @supports not () {html::before { display: none !important; content: 'supports-not'; }} */
+
 /* Config
 /* ========================================================================== */
  
@@ -10,7 +12,9 @@
   --font-family-primary: 'Open Sans';
 
   /* Colors */
-  --color-background-primary: hsl(0, 0%, 100%);
+  --color-background-primary: white;
+  --page-selection-color: white;
+  --page-selection-background-color: black;
 }
 
 /* General
@@ -78,6 +82,7 @@ h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   html:focus-within {
    scroll-behavior: auto;
   }
@@ -90,4 +95,13 @@ h6 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+::selection {
+  color: var(--page-selection-color);
+  background: var(--page-selection-background-color);
+}
+::-moz-selection {
+  color: var(--page-selection-color);
+  background: var(--page-selection-background-color);
 }

@@ -10,66 +10,40 @@
 
 a {
   text-decoration: underline;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
   background-color: transparent;
 }
 
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  text-underline-offset: 0.15em;
-  text-decoration-thickness: .05em;
-}
+@supports selector(a:not(nav a)) {
 
-/* Legacy */
+  a:not(nav a):not(*) {
+    text-decoration-skip-ink: auto;
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+  }
 
-.content a {
-  color: var(--link-color);
-}
+  a:not(nav a) {
+    color: var(--link-color);
+  }
 
-.content a:hover:not(:focus),
-.content a:active:not(:focus) {
-  color: var(--link-color-hover-active);
-}
-
-.content a:focus {
-  outline: 0.125rem solid black;
-  outline-offset: 0.1rem;
-}
-
-/* Native
-/* --------------------------------------------------------- */
-
-.content a {
-  text-shadow: 0.03em 0 var(--link-background-color), -0.03em 0 var(--link-background-color), 0 0.03em var(--link-background-color), 0 -0.03em var(--link-background-color), 0.06em 0 var(--link-background-color), -0.06em 0 var(--link-background-color), 0.09em 0 var(--link-background-color), -0.09em 0 var(--link-background-color), 0.12em 0 var(--link-background-color), -0.12em 0 var(--link-background-color), 0.15em 0 var(--link-background-color), -0.15em 0 var(--link-background-color);
-  background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
-  background-repeat: repeat-x;
-  background-size: 100% 1px;
-  background-position: 0 1.23em;
-  text-decoration: none;
-}
-
-.content a:focus:not(:focus-visible) {
-  outline: none !important;
-}
-
-.content a::selection {
-  color: var(--page-selection-color);
-  text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
-  background: var(--page-selection-background-color);
-}
-
-.content a::-moz-selection {
-  color: var(--page-selection-color);
-  text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
-  background: var(--page-selection-background-color);
-}
+  a:not(nav a):hover,
+  a:not(nav a):active {
+    color: var(--link-color-hover-active);
+  }
 
 
-/* IE 10 & 11
-/* --------------------------------------------------------- */
+  a:not(nav a):focus {
+    outline: 0.125rem solid black;
+    outline-offset: 0.1rem;
+  }
 
-@media (-ms-high-contrast: none) {
+  a:not(nav a):focus:not(:focus-visible) {
+    outline: none;
+  }
 
-  .content a {
+  a:not(nav a) {
     text-shadow: 0.03em 0 var(--link-background-color), -0.03em 0 var(--link-background-color), 0 0.03em var(--link-background-color), 0 -0.03em var(--link-background-color), 0.06em 0 var(--link-background-color), -0.06em 0 var(--link-background-color), 0.09em 0 var(--link-background-color), -0.09em 0 var(--link-background-color), 0.12em 0 var(--link-background-color), -0.12em 0 var(--link-background-color), 0.15em 0 var(--link-background-color), -0.15em 0 var(--link-background-color);
     background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
     background-repeat: repeat-x;
@@ -78,25 +52,67 @@ a:not([class]) {
     text-decoration: none;
   }
 
-  .content a:hover {
+  a:not(nav a) {
+    color: var(--link-color);
+  }
+
+  a:not(nav a):hover,
+  a:not(nav a):active {
     color: var(--link-color-hover-active);
-    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+  }
+
+  a:not(nav a)::selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+
+  a:not(nav a)::-moz-selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+
+}
+
+/* --------------------------------------------------------- */
+
+@supports not (selector(a:not([class]))) {
+
+  .content a {
+    color: var(--link-color);
+  }
+
+  .content a:hover,
+  .content a:active {
+    color: var(--link-color-hover-active);
+  }
+
+  .content a:focus {
+    outline: 0.125rem solid black;
+    outline-offset: 0.1rem;
   }
 
   .content a:focus:not(:focus-visible) {
-    outline: none !important;
+    outline: none;
   }
 
-  .content a:active {
-    color: var(--link-color-hover-active);
-    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
-  }
+}
 
-  .content a::selection {
-    color: var(--page-selection-color);
-    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
-    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
-    background-color: var(--page-selection-background-color);
-  }
+.no-supports .content a:not([class]) {
+  color: var(--link-color);
+}
 
+.no-supports .content a:not([class]):hover,
+.no-supports .content a:not([class]):active {
+  color: var(--link-color-hover-active);
+}
+
+.no-supports .content a:not([class]):focus {
+  outline: 0.125rem solid black;
+  outline-offset: 0.1rem;
+}
+
+.no-supports .content a:not([class]):focus:not(:focus-visible) {
+  outline: none;
 }

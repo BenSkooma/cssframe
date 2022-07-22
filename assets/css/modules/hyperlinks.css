@@ -1,6 +1,6 @@
 :root {
   --link-background-color: var(--color-background-primary);
-  --link-color: hsl(222, 100%, 76%);
+  --link-color: hsl(222, 100%, 50%);
   --link-color-hover-active: hsl(0, 100%, 50%);
   --link-color-focus: hsl(0, 0%, 100%);
   --link-background-color-focus: hsl(0, 0%, 0%);
